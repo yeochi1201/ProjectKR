@@ -4,12 +4,19 @@ using UnityEngine;
 public class CharacterSpecData : ScriptableObject
 {
     #region Attribute
+    [SerializeField]
     int maxHp;
+    [SerializeField]
     int maxMp;
+    [SerializeField]
     float speed;
+    [SerializeField]
     int defense;
+    [SerializeField]
     int attack;
+    [SerializeField]
     Region region;
+    [SerializeField]
     Elemental elemental;
     #endregion
 
