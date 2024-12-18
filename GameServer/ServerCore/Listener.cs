@@ -3,9 +3,9 @@ using System.Net.Sockets;
 
 namespace ServerCore
 {
-    public class Listener 
+    public class Listener
     {
-        Socket _listenSocket;
+        Socket? _listenSocket;
 
         public void Init(IPEndPoint endPoint, int register, int backlog)
         {
@@ -13,8 +13,8 @@ namespace ServerCore
             _listenSocket.Bind(endPoint);
             _listenSocket.Listen(backlog);
 
-            Task acceptTask = Task.Run(() => {StartAcceptRegister(register);}); //Asynchronous Accept Task
-            
+            Task acceptTask = Task.Run(() => { StartAcceptRegister(register); }); //Asynchronous Accept Task
+
         }
         private void StartAcceptRegister(int register)
         {
@@ -28,11 +28,11 @@ namespace ServerCore
         private void RegisterAccept(SocketAsyncEventArgs args)
         {
             args.AcceptSocket = null;
-            if (_listenSocket.AcceptAsync(args) == false)
+            if (_listenSocket?.AcceptAsync(args) == false)
                 OnAcceptCompleted(null, args);
         }
 
-        private void OnAcceptCompleted(object sender, SocketAsyncEventArgs args)
+        private void OnAcceptCompleted(object? sender, SocketAsyncEventArgs args)
         {
             //TODO
         }
