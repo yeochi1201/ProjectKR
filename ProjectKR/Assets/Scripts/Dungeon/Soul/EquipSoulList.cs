@@ -5,31 +5,33 @@ public class EquipSoulList : MonoBehaviour
 {
     #region Attribute
     List<BaseSoul> _soulList = new(3);
-    int _index;
+    int _index = 0;
     int _count = 0;
-    int _maxCount = 3;
     #endregion
-    #region Getter
-    public List<BaseSoul> GetSoulList()
-    {
-        return _soulList;
-    }
-    #endregion
-    #region Setter
+    #region Getter & Setter
+    public List<BaseSoul> SoulList {  get { return _soulList; } }
     #endregion
     #region Function
     public BaseSoul GetNextSoul()
     {
         _index = (_index + 1)%_count;
+        if (_soulList[_index] == null)
+        {
+            return GetNextSoul();
+        }
         return _soulList[_index];
     }
     public void EquipSoul(int count,  BaseSoul soul)
     {
         _soulList[count] = soul;
+        _count++;
     }
-    public void UnequipSoul(int count)
+    public BaseSoul UnequipSoul(int count)
     {
+        BaseSoul soul = _soulList[count];
         _soulList[count] = null;
+        _count--;
+        return soul;
     }
     #endregion
 }

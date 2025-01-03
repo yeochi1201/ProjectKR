@@ -3,7 +3,7 @@ using UnityEngine;
 public class CharacterAction : MonoBehaviour
 {
     #region Attribute
-    CharacterSpec spec;
+    protected CharacterSpec _spec;
     #endregion
     #region Function
     public void BasicAttack()
@@ -13,13 +13,13 @@ public class CharacterAction : MonoBehaviour
     }
     public void Damaged(int attack)
     {
-        int defenseValue = spec.GetDefense()+100;
+        int defenseValue = _spec.GetDefense()+100;
         int damage = attack * 100 / defenseValue;
-        int remainHp = spec.GetHp() - damage;
+        int remainHp = _spec.GetHp() - damage;
         OnDamaged();
         if (remainHp > 0)
         {
-            spec.SetHp(remainHp);
+            _spec.SetHp(remainHp);
         }
         else
         {
@@ -28,15 +28,15 @@ public class CharacterAction : MonoBehaviour
     }
     public void Heal(int heal)
     {
-        int resultHp = spec.GetHp() + heal;
+        int resultHp = _spec.GetHp() + heal;
         OnHeal();
-        if (resultHp > spec.GetMaxHp())
+        if (resultHp > _spec.GetMaxHp())
         {
-            spec.SetHp(spec.GetMaxHp());
+            _spec.SetHp(_spec.GetMaxHp());
         }
         else
         {
-            spec.SetHp(resultHp);
+            _spec.SetHp(resultHp);
         }
     }
     public void Dead()
@@ -66,7 +66,7 @@ public class CharacterAction : MonoBehaviour
     #region Unity
     private void Start()
     {
-        spec = GetComponent<CharacterSpec>();
+        _spec = GetComponent<CharacterSpec>();
     }
     #endregion
 }
