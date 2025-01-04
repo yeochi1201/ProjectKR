@@ -4,13 +4,13 @@ public class CharacterSpec : MonoBehaviour
 {
     CharacterSpecData data; // DataManager에서 받는 걸로 대체 예정
     #region Attribute
-    int maxhp;
+    protected int maxhp;
     int hp;
-    int maxmp;
+    protected int maxmp;
     int mp;
-    float speed;
-    int defense;
-    int attack;
+    protected float speed;
+    protected int defense;
+    protected int attack;
 
     Region region;
     Elemental elemental;
@@ -88,6 +88,7 @@ public class CharacterSpec : MonoBehaviour
         region = data.Region;
         elemental = data.Elemental;
     }
+    
     #endregion
     #region Unity
     public void Start()
