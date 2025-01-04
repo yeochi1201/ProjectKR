@@ -24,3 +24,10 @@ public enum Elemental
     WATER,
     NONE
 }
+
+public enum UIEvent 
+{
+    DOWN,
+    UP,
+    CLICK
+}

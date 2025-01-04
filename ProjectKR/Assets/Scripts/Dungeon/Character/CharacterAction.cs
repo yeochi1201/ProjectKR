@@ -13,13 +13,13 @@ public class CharacterAction : MonoBehaviour
     }
     public void Damaged(int attack)
     {
-        int defenseValue = _spec.GetDefense()+100;
+        int defenseValue = _spec.Defense+100;
         int damage = attack * 100 / defenseValue;
-        int remainHp = _spec.GetHp() - damage;
+        int remainHp = _spec.Hp - damage;
         OnDamaged();
         if (remainHp > 0)
         {
-            _spec.SetHp(remainHp);
+            _spec.Hp = remainHp;
         }
         else
         {
@@ -28,15 +28,15 @@ public class CharacterAction : MonoBehaviour
     }
     public void Heal(int heal)
     {
-        int resultHp = _spec.GetHp() + heal;
+        int resultHp = _spec.Hp + heal;
         OnHeal();
-        if (resultHp > _spec.GetMaxHp())
+        if (resultHp > _spec.MaxHp)
         {
-            _spec.SetHp(_spec.GetMaxHp());
+            _spec.Hp = _spec.MaxHp;
         }
         else
         {
-            _spec.SetHp(resultHp);
+            _spec.Hp = resultHp;
         }
     }
     public void Dead()

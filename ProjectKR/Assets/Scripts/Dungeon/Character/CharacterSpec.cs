@@ -8,72 +8,31 @@ public class CharacterSpec : MonoBehaviour
     int hp;
     protected int maxmp;
     int mp;
-    protected float speed;
+    protected float speed = 5f;
     protected int defense;
     protected int attack;
 
     Region region;
     Elemental elemental;
     #endregion
-    #region Getter
-    public int GetMaxHp()
-    {
-        return maxhp;
-    }
-    public int GetHp()
-    {
-        return hp;
-    }
-    public int GetMaxMp()
-    {
-        return maxmp;
-    }
-    public int GetMp()
-    {
-        return mp;
-    }
-    public float GetSpeed()
-    {
-        return speed;
-    }
-    public int GetDefense()
-    {
-        return defense;
-    }
-    public int GetAttack()
-    {
-        return attack;
-    }
-    public Region GetRegion()
-    {
-        return region;
-    }
-    public Elemental GetElemental()
-    {
-        return elemental;
-    }
+    #region Getter & Setter
+    public int MaxHp {  get { return maxhp; } set { maxhp = value; } }
+    public int Hp { get { return hp; } set { hp = value; } }
+
+    public int MaxMp { get { return maxmp; } set {maxmp = value; } }
+    public int Mp {  get { return mp; } set { mp = value; } }
+    public float Speed { get { return speed; } set { speed = value; } }
+    public int Defense { get { return defense; } set { defense = value; } }
+    public int Attack { get { return attack; } set { attack = value; } }
+    public Elemental Elemental { get { return elemental; } set { elemental = value; } }
+    
     #endregion
     #region Setter
     public void SetHp(int hp)
     {
         this.hp = hp;
     }
-    public void SetMp(int mp)
-    {
-        this.mp = mp;
-    }
-    public void SetSpeed(float speed)
-    {
-        this.speed = speed;
-    }
-    public void SetDefense(int defense)
-    {
-        this.defense = defense;
-    }
-    public void SetAttack(int attack)
-    { 
-        this.attack = attack;
-    }
+    
     #endregion
     #region Function
     public void SetAttribute()
@@ -93,7 +52,7 @@ public class CharacterSpec : MonoBehaviour
     #region Unity
     public void Start()
     {
-        SetAttribute();
+        //SetAttribute();
     }
     #endregion
 }
