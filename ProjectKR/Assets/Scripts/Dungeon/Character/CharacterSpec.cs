@@ -12,7 +12,7 @@ public class CharacterSpec : MonoBehaviour
     protected int defense;
     protected int attack;
 
-    Region region;
+    ERA region;
     Elemental elemental;
     #endregion
     #region Getter & Setter

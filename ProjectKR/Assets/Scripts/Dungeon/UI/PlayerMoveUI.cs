@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class UIControllerButton : UIBase
+public class PlayerMoveUI : UIBase
 {
     GameObject _player;
     MoveDir dir = MoveDir.NONE;
@@ -14,10 +14,6 @@ public class UIControllerButton : UIBase
         RIGHT,
         UP,
         DOWN,
-    }
-    enum Images
-    {
-
     }
 
     #region Event Function
@@ -83,6 +79,7 @@ public class UIControllerButton : UIBase
         BindDownButton();
     }
     #endregion
+    #region Function
     private void Move()
     {
         switch (dir)
@@ -102,8 +99,9 @@ public class UIControllerButton : UIBase
             default:
                 break;
         }
-
     }
+    #endregion
+    #region Unity
     private void Start()
     {
         _player = PlayerState.Player;
@@ -118,4 +116,5 @@ public class UIControllerButton : UIBase
             Move();
         }
     }
+    #endregion
 }

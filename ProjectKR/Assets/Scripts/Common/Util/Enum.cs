@@ -1,18 +1,11 @@
-public enum MoveDir
+
+public enum ERA
 {
-    NONE,
-    UP,
-    DOWN,
-    LEFT,
-    RIGHT
-}
-public enum Region
-{
-    KOREA,
-    NORTH_EUROPE,
-    GREECE_ROME,
-    CHINA,
-    JAPAN
+    GOJOSEON,
+    SAMHAN,
+    GORYEO,
+    JOSEON,
+    COLONIAL
 }
 
 public enum Elemental
@@ -25,9 +18,25 @@ public enum Elemental
     NONE
 }
 
+public enum  SoulGrade
+{
+    COMMON,
+    PERSONALITY,
+    TALE,
+    MYTH
+}
+
 public enum UIEvent 
 {
     DOWN,
     UP,
     CLICK
+}
+public enum MoveDir
+{
+    NONE,
+    UP,
+    DOWN,
+    LEFT,
+    RIGHT
 }
