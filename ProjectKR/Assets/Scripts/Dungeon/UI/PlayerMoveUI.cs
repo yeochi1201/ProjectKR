@@ -102,10 +102,9 @@ public class PlayerMoveUI : UIBase
     }
     #endregion
     #region Unity
-    private void Start()
+    public void Start()
     {
         _player = PlayerState.Player;
-        Debug.Log(PlayerState.PlayerSpec.Speed);
         Bind<Button>(typeof(Buttons));
         BindEvent();
     }

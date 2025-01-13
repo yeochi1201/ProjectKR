@@ -14,18 +14,18 @@ public class PlayerSpec : CharacterSpec
     public void AddSoulAttribute(BaseSoul soul)
     {
         SoulData soulData = soul.SoulData;
-        maxhp += soulData.AddHp;
-        speed += soulData.AddSpeed;
-        defense += soulData.AddDefense;
-        attack += soulData.AddAttack;
+        _maxhp += soulData.AddHp;
+        _speed += soulData.AddSpeed;
+        _defense += soulData.AddDefense;
+        _attack += soulData.AddAttack;
     }
     public void MinusSoulAttribute(BaseSoul soul)
     {
         SoulData soulData = soul.SoulData;
-        maxhp -= soulData.AddHp;
-        speed -= soulData.AddSpeed;
-        defense -= soulData.AddDefense;
-        attack -= soulData.AddAttack;
+        _maxhp -= soulData.AddHp;
+        _speed -= soulData.AddSpeed;
+        _defense -= soulData.AddDefense;
+        _attack -= soulData.AddAttack;
     }
     #endregion
 }

@@ -18,14 +18,6 @@ public class SoulUI : MonoBehaviour
         }
         PlayerState.PlayerSpec.AddSoulAttribute(soul);
     }
-    private void UnequipSoul(int count, BaseSoul soul)
-    {
-        BaseSoul prev = PlayerState.SoulList.UnequipSoul(count);
-        if (prev != null)
-        {
-            PlayerState.PlayerSpec.MinusSoulAttribute(prev);
-        }
-    }
     #endregion
     #region Button Function
 

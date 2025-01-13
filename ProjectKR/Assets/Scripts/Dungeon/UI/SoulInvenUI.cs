@@ -1,18 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class SoulInvenUI : MonoBehaviour
+public class SoulInvenUI : UIBase
 {
-    // Start is called before the first frame update
-    void Start()
+    enum EquipedSoulUIs
     {
-        
+        EquipedSoulUI1, 
+        EquipedSoulUI2, 
+        EquipedSoulUI3,
     }
+    #region Attribute
 
-    // Update is called once per frame
-    void Update()
+    #endregion
+    #region Bind Function
+
+    #endregion
+    #region UnityFunction
+    public void OnStart()
     {
-        
+        Bind<EquipedSoulUI>(typeof(EquipedSoulUIs));
     }
+    #endregion
 }

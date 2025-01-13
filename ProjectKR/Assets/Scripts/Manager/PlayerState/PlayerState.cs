@@ -19,10 +19,11 @@ public class PlayerState : MonoBehaviour
     #region Function
     #endregion
     #region Unity Function
-    private void Start()
+    private void Awake()
     {
         _player = this.gameObject;
         _spec = this.GetComponent<PlayerSpec>();
+        _spec.SetAttribute();
         _action = this.GetComponent<PlayerAction>();
     }
     #endregion

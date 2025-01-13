@@ -15,8 +15,6 @@ public class CharacterSpecData : ScriptableObject
     [SerializeField]
     int attack;
     [SerializeField]
-    ERA region;
-    [SerializeField]
     Elemental elemental;
     #endregion
 
@@ -26,7 +24,6 @@ public class CharacterSpecData : ScriptableObject
     public float Speed { get { return speed; } }
     public int Defense { get { return defense; } }
     public int Attack { get { return attack; } }
-    public ERA Region { get { return region; } }
     public Elemental Elemental {  get { return elemental; } }
     #endregion
 }

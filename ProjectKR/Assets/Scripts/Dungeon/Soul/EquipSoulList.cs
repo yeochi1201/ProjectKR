@@ -24,11 +24,13 @@ public class EquipSoulList : MonoBehaviour
     public void EquipSoul(int count,  BaseSoul soul)
     {
         _soulList[count] = soul;
+        PlayerState.PlayerSpec.AddSoulAttribute(soul);
         _count++;
     }
     public BaseSoul UnequipSoul(int count)
     {
         BaseSoul soul = _soulList[count];
+        PlayerState.PlayerSpec.MinusSoulAttribute(soul);
         _soulList[count] = null;
         _count--;
         return soul;
